@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 def islower(c):
     """islower - check if a number is lowercase
     @c: character
