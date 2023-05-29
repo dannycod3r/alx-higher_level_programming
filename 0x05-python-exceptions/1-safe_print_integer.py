@@ -7,6 +7,5 @@ def safe_print_integer(value):
         return False
 
 
-
 if __name__ == "__main__":
     safe_print_integer(value)
