@@ -14,10 +14,6 @@ class Square:
         Args:
             size: Size of square
         """
-        if not isinstance(size, int):
-            raise TypeError("size must be an integer")
-        if size < 0:
-            raise ValueError("size must be >= 0")
         self.__size = size
 
     @property
@@ -33,7 +29,9 @@ class Square:
     def size(self, value):
         """Set the size of square to value"""
         if not isinstance(value, int):
-            raise TypeError("size must be integer")
+            raise TypeError("size must be an integer")
+        if value < 0:
+            raise ValueError("size must be >= 0")
         self.__size = value
 
     def area(self):
