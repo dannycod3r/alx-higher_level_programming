@@ -1,0 +1,74 @@
+# 2-rectangle.txt
+
+================================
+Usage of module: ``2-rectangle``
+================================
+
+This module supplies the class ``Rectangle`` - blueprint for rectangles
+
+Object can be initialized with dimensions ``width`` and ``height``
+
+Example:
+
+::
+    >>> Rectangle = __import__('3-rectangle').Rectangle
+    >>> my_rectangle = Rectangle(2, 4)
+    >>> print(my_rectangle.__dict__)
+    {'_Rectangle__height': 4, '_Rectangle__width': 2}
+
+
+The object of ``Rectangle`` can return the ``width`` and ``height`` of the rectangle
+
+Example:
+
+::
+    >>> my_rectangle.height
+    4
+    >>> my_rectangle.width
+    2
+
+You can also modify the the ``width`` and ``height``
+Note: width and height must be integers
+
+Examlpe:
+
+::
+    >>> my_rectangle.width = 10
+    >>> my_rectangle.height = 2
+    >>> print(my_rectangle.__dict__)
+    {'_Rectangle__height': 2, '_Rectangle__width': 10}
+
+    >>> my_rectangle.width = None
+    Traceback (most recent call last):
+    TypeError: width must be an integer
+    >>> my_rectangle.height = None
+    Traceback (most recent call last):
+    TypeError: height must be an integer
+
+The class has methods to find the area and perimeter of the rectangle
+
+Example:
+
+::
+    >>> my_rectangle = Rectangle(2, 4)
+    >>> print("Area: {} - Perimeter: {}".format(my_rectangle.area(), my_rectangle.perimeter()))
+    Area: 8 - Perimeter: 12
+    >>> my_rectangle = Rectangle(0, 0)
+    >>> print("Area: {} - Perimeter: {}".format(my_rectangle.area(), my_rectangle.perimeter()))
+    Area: 0 - Perimeter: 0
+
+``str`` and ``repr``
+
+Example:
+
+::
+    >>> my_rectangle = Rectangle(2, 4)
+    >>> print("Area: {} - Perimeter: {}".format(my_rectangle.area(), my_rectangle.perimeter()))
+    Area: 8 - Perimeter: 12
+    >>> print(str(my_rectangle))
+    ##
+    ##
+    ##
+    ##
+    >>> print(repr(my_rectangle)) #doctest: +ELLIPSIS
+    <3-rectangle.Rectangle object at 0x...>
