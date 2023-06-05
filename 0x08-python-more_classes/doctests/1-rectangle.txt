@@ -1,0 +1,39 @@
+# 0-rectangle.txt
+
+================================
+Usage of module: ``0-rectangle``
+================================
+
+This module supplies the class ``Rectangle`` - blueprint for rectangles
+
+Object can be initialized with dimensions ``width`` and ``height``
+
+Example:
+
+::
+    >>> Rectangle = __import__('1-rectangle').Rectangle
+    >>> my_rectangle = Rectangle(2, 4)
+    >>> print(my_rectangle.__dict__)
+    {'_Rectangle__height': 4, '_Rectangle__width': 2}
+
+
+The object of ``Rectangle`` can return the ``width`` and ``height`` of the rectangle
+
+Example:
+
+::
+    >>> my_rectangle.height
+    4
+    >>> my_rectangle.width
+    2
+
+You can also modify the the ``width`` and ``height``
+Note: width and height must be integers
+
+Examlpe:
+
+::
+    >>> my_rectangle.width = 10
+    >>> my_rectangle.height = 2
+    >>> print(my_rectangle.__dict__)
+    {'_Rectangle__height': 2, '_Rectangle__width': 10}

@@ -1,0 +1,18 @@
+# 0-rectangle.txt
+
+================================
+Usage of module: ``0-rectangle``
+================================
+
+This module supplis an empty class ``Rectangle``
+Running ``__dict__`` on ``Rectangle()`` should return an empty list
+
+Example:
+
+::
+    >>> Rectangle = __import__('0-rectangle').Rectangle
+    >>> my_rectangle = Rectangle()
+    >>> print(type(my_rectangle))
+    <class '0-rectangle.Rectangle'>
+    >>> print(my_rectangle.__dict__)
+    {}
