@@ -18,14 +18,11 @@ class Rectangle:
     def __str__(self):
         """informal representation of object"""
         if self.__width == 0 or self.__height == 0:
-            return " "
-        rect_str = ""
+            return ""
+        rect_str = []
         for i in range(self.__height):
-            if i == self.__height - 1:
-                rect_str += "#" * self.__width
-            else:
-                rect_str += "#" * self.__width + "\n"
-        return rect_str
+            rect_str.append("#" * self.__width)
+        return "\n".join(rect_str)
 
     def __init__(self, width=0, height=0):
         """Initialize the rectangle
