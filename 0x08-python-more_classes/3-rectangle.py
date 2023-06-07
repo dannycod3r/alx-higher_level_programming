@@ -18,7 +18,7 @@ class Rectangle:
     def __str__(self):
         """informal representation of object"""
         if self.__width == 0 or self.__height == 0:
-            print()
+            return " "
         rect_str = ""
         for i in range(self.__height):
             if i == self.__height - 1:
