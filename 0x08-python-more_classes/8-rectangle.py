@@ -23,14 +23,11 @@ class Rectangle:
     def __str__(self):
         """informal representation of object"""
         if self.__width == 0 or self.__height == 0:
-            print("")
-        rect_str = ""
+            return ""
+        rect_str = []
         for i in range(self.__height):
-            if i == self.__height - 1:
-                rect_str += str(self.print_symbol) * self.__width
-            else:
-                rect_str += str(self.print_symbol) * self.__width + "\n"
-        return rect_str
+            rect_str.append(str(self.print_symbol) * self.__width)
+        return "\n".join(rect_str)
 
     def __repr__(self):
         """a formal representation of object"""
