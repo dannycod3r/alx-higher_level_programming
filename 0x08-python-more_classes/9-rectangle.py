@@ -45,8 +45,8 @@ class Rectangle:
             width(int): width of rectangle
             height(int): height of rectangle
         """
-        self.height = height
         self.width = width
+        self.height = height
         Rectangle.number_of_instances += 1
 
     @property
@@ -128,8 +128,4 @@ class Rectangle:
         Args:
             size(int): size of square
         """
-        if not isinstance(size, int):
-            raise TypeError("width must be an integer")
-        if size < 0:
-            raise ValueError("width must be >= 0")
         return cls(size, size)
