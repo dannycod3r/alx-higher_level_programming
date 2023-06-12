@@ -61,3 +61,10 @@ for duplicate elements
     >>> my_list.append(1)
     >>> my_list.print_sorted()
     [1, 1, 2, 2, 3, 4, 5, 5]
+
+check for None
+::
+    >>> my_list = MyList()
+    >>> my_list.append(None)
+    >>> my_list.print_sorted()
+    [None]
