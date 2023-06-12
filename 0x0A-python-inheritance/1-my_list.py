@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Module 1-my_list supplies the class MyList"""
 
+
 class MyList(list):
     """Class MyList a custom defined list class
 
