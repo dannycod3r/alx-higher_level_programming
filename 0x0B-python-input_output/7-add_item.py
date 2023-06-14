@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""A script that adds all arguments to a Python list, 
+"""A script that adds all arguments to a Python list,
 and then save them to a file"""
 from sys import argv
 
@@ -18,6 +18,3 @@ def add_item():
 
 if __name__ == "__main__":
     add_item()
-
-
-
