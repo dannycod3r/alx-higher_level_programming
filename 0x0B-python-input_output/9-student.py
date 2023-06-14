@@ -4,7 +4,7 @@
 
 class Student:
     """Blueprint for creating students
-    
+
     Attributes:
         first_name
         last_name
@@ -17,7 +17,6 @@ class Student:
     last_name = ""
     age = 0
 
-
     def __init__(self, first_name, last_name, age):
         """Class constructor"""
         self.first_name = first_name
@@ -25,6 +24,6 @@ class Student:
         self.age = age
 
     def to_json(self):
-        """this function retrieves a dictionary representation 
+        """this function retrieves a dictionary representation
         of a Student instance"""
         return self.__dict__
