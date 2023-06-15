@@ -25,11 +25,11 @@ class Student:
         # if there is no attribute or attribute isnt a list
         if attrs is None or not isinstance(attrs, list):
             return self.__dict__
-        
+
         # empty dict
         stu_dict = {}
         for attr in attrs:
             if hasattr(self, attr):
-                stu_dict[attr] = getattr(self,attr)
+                stu_dict[attr] = getattr(self, attr)
 
         return stu_dict
