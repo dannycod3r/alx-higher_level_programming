@@ -133,3 +133,12 @@ class Rectangle(Base):
     def area(self):
         """Return the area of a reactangle"""
         return self.width * self.height
+
+    # Print the rectangl with #
+    ###########################
+    def display(self):
+        """Print the rectangle"""
+        for _ in range(self.height):
+            for _ in range(self.width):
+                print("#", end="")
+            print()
