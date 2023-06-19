@@ -6,6 +6,10 @@ from models.rectangle import Rectangle
 
 class TestRectangleClass(unittest.TestCase):
     """Test class for class Rectangle"""
+    def setUp(self):
+        """Reset the base __nb_object to zero before each test"""
+        Rectangle.__base__._Base__nb_objects = 0
+
     def test_initialization_rectangle_auto_set_id(self):
         """Test initialisation with and without id\
         should set respective attribute in the constructor"""
