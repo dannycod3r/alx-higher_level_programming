@@ -16,11 +16,21 @@ class TestRectangleClass(unittest.TestCase):
     # tests for setters
     def test_width_set_correctly(self):
         """An instance can be created by setting the width"""
-        pass
+        self.assertEqual(Rectangle(2, 10).width, 2)  # width = 2
+        self.assertEqual(Rectangle(10, 2).width, 10)  # width = 10
+        self.assertEqual(Rectangle(100, 2, 0, 0, 12).id, 12)  # width = 100
 
     def test_raise_exception_width_not_set(self):
         """Raise exception if width not set"""
-        pass
+        with self.assertRaises(ValueError):
+            Rectangle(-2, 10)
+            Rectangle(-1000, 1)
+            Rectangle(0, 10)
+
+        with self.assertRaises(TypeError):
+            Rectangle("2", 10)
+            Rectangle(2.5, 10)
+            Rectangle(None, 10)
 
     def test_height_set_correctly(self):
         """An instance can be created by setting height"""
