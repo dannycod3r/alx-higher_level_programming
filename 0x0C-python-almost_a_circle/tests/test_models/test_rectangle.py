@@ -149,3 +149,12 @@ class TestRectangleClass(unittest.TestCase):
 
         displayed_output = output.getvalue()
         self.assertEqual(displayed_output, extected_out)
+
+    def test_update_rectangle_details(self):
+        """Successfully update the rectangle details"""
+        self.rect = Rectangle(10, 10, 10, 10)
+        self.rect.update(89)
+        self.assertEqual(str(self.rect), "[Rectangle] (89) 10/10 - 10/10")
+
+        self.rect.update(89, 2, 3, 4, 5)
+        self.assertEqual(str(self.rect), "[Rectangle] (89) 4/5 - 2/3")
