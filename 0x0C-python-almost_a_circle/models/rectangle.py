@@ -7,12 +7,13 @@ class Rectangle(Base):
     """Blueprint for rectangles
 
     Attributes:
-         __width: width\n
-        __height: height\n
-             __x: x\n
-             __y: y\n
+         width: width\n
+        height: height\n
+             x: x\n
+             y: y\n
 
     Methods:
+        area(): return the area of rectangle
     """
     def __init__(self, width, height, x=0, y=0, id=None):
         """Class constructor
