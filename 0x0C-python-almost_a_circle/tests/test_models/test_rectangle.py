@@ -128,3 +128,10 @@ class TestRectangleClass(unittest.TestCase):
 
         displayed_output = output.getvalue()
         self.assertEqual(displayed_output, extected_out)
+
+    # test for __str__
+    def test_str_representation(self):
+        """Test __str__ for correct display"""
+        self.assertEqual(
+            str(Rectangle(4, 6, 2, 1, 12)), "[Rectangle] (12) 2/1 - 4/6"
+            )
