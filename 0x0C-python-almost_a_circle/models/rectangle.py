@@ -104,7 +104,7 @@ class Rectangle(Base):
             raise ValueError("x must be >= 0")
         self.__x = value
 
-     # Getters and setter for y attribute
+    # Getters and setter for y attribute
     ####################################
     @property
     def y(self):

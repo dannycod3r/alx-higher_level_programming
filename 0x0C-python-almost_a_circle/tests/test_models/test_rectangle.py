@@ -42,7 +42,7 @@ class TestRectangleClass(unittest.TestCase):
         """An instance can be created by setting height"""
         self.assertEqual(Rectangle(2, 10).height, 10)  # height = 10
         self.assertEqual(Rectangle(10, 2).height, 2)  # height = 2
-        self.assertEqual(Rectangle(2, 100, 0, 0, 12).height, 100)  # height = 100
+        self.assertEqual(Rectangle(2, 100, 0, 0, 12).height, 100)  # h = 100
 
     def test_raise_exception_height_not_set(self):
         """Raise exception if height not set"""
@@ -52,7 +52,7 @@ class TestRectangleClass(unittest.TestCase):
             Rectangle(10, 0)
 
         with self.assertRaises(TypeError):
-            Rectangle(10,"2")
+            Rectangle(10, "2")
             Rectangle(25, 2.3)
             Rectangle(10, None)
 
