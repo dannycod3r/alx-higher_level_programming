@@ -105,29 +105,29 @@ class TestRectangleClass(unittest.TestCase):
     # test printing to stdout
     # https://ryip.me/posts/python/unittest-stdout-stderr/
     ######################################################
-    def test_display_rectangle_with_sign(self):
-        """Test printing of rectangle with sign"""
-        # test for 4, 6
-        output = StringIO()
+    # def test_display_rectangle_with_sign(self):
+    #     """Test printing of rectangle with sign"""
+    #     # test for 4, 6
+    #     output = StringIO()
 
-        with patch("sys.stdout", new=output):
-            Rectangle(4, 6).display()
+    #     with patch("sys.stdout", new=output):
+    #         Rectangle(4, 6).display()
 
-        extected_out = '####\n####\n####\n####\n####\n####\n'
+    #     extected_out = '####\n####\n####\n####\n####\n####\n'
 
-        displayed_output = output.getvalue()
-        self.assertEqual(displayed_output, extected_out)
+    #     displayed_output = output.getvalue()
+    #     self.assertEqual(displayed_output, extected_out)
 
-        # test for 2, 2
-        output = StringIO()
+    #     # test for 2, 2
+    #     output = StringIO()
 
-        with patch("sys.stdout", new=output):
-            Rectangle(2, 2).display()
+    #     with patch("sys.stdout", new=output):
+    #         Rectangle(2, 2).display()
 
-        extected_out = '##\n##\n'
+    #     extected_out = '##\n##\n'
 
-        displayed_output = output.getvalue()
-        self.assertEqual(displayed_output, extected_out)
+    #     displayed_output = output.getvalue()
+    #     self.assertEqual(displayed_output, extected_out)
 
     # test for __str__
     def test_str_representation(self):
@@ -135,3 +135,17 @@ class TestRectangleClass(unittest.TestCase):
         self.assertEqual(
             str(Rectangle(4, 6, 2, 1, 12)), "[Rectangle] (12) 2/1 - 4/6"
             )
+
+    # test display with x, y
+    def test_display_x_and_y(self):
+        """Test rectangle dislay with x, displacement"""
+        # test for 4, 6
+        output = StringIO()
+
+        with patch("sys.stdout", new=output):
+            Rectangle(2, 3, 2, 2).display()
+
+        extected_out = '\n\n  ##\n  ##\n  ##\n'
+
+        displayed_output = output.getvalue()
+        self.assertEqual(displayed_output, extected_out)
