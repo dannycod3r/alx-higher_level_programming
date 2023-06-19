@@ -29,6 +29,12 @@ class Rectangle(Base):
         self.y = y
         super().__init__(id)
 
+    #
+    def __str__(self):
+        """Return an informal representation of a rectangle instance"""
+        return f"[Rectangle] \
+({self.id}) {self.x}/{self.y} - {self.width}/{self.height}"
+
     # Getters and Setters for width attribute
     #########################################
     @property
