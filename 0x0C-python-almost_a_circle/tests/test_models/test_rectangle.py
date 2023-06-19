@@ -95,5 +95,6 @@ class TestRectangleClass(unittest.TestCase):
     def test_return_area_of_rectangle(self):
         """An instance should return the area"""
         self.assertEqual(Rectangle(3, 2).area(), 6)  # 3*2
+        self.assertEqual(Rectangle(3, 3).area(), 9)
         self.assertEqual(Rectangle(2, 10).area(), 20)  # 2*10
         self.assertEqual(Rectangle(8, 7, 0, 0, 12).area(), 56)  # 8*7
