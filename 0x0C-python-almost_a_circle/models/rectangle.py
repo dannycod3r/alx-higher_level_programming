@@ -143,8 +143,9 @@ class Rectangle(Base):
     # Print the rectangl with #
     ###########################
     def display(self):
-        """Print the rectangle"""
-        for _ in range(self.height):
-            for _ in range(self.width):
-                print("#", end="")
+        """Print the rectangle with respect to x and y"""
+        for _ in range(self.y):
             print()
+        for _ in range(self.height):
+            print(" " * self.x + "#" * self.width)
+        
