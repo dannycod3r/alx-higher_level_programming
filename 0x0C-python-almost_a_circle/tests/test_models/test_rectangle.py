@@ -56,18 +56,38 @@ class TestRectangleClass(unittest.TestCase):
             Rectangle(25, 2.3)
             Rectangle(10, None)
 
+    # test for x
     def test_x_set_correctly(self):
         """An instance can be created by setting the x"""
-        pass
+        self.assertEqual(Rectangle(10, 2).x, 0)  # 0 if not set
+        self.assertEqual(Rectangle(10, 2, 3, 1).x, 3)  # x = 3
+        self.assertEqual(Rectangle(10, 2, 0, 1).x, 0)  # x = 0
+        self.assertEqual(Rectangle(10, 2, 1000, 1).x, 1000)
 
     def test_raise_exception_x_not_set(self):
         """Raise exception if x not set"""
-        pass
+        with self.assertRaises(ValueError):
+            Rectangle(10, 2, -3, 1)
+            Rectangle(10, 2, 3.5, 1)
 
+        with self.assertRaises(TypeError):
+            Rectangle(10, 2, "2", 1)
+            Rectangle(10, 3.5, None, 5)
+
+    # test for y
     def test_y_set_correctly(self):
         """An instance can be created by setting y"""
-        pass
+        self.assertEqual(Rectangle(10, 2).y, 0)  # 0 if not set
+        self.assertEqual(Rectangle(10, 2, 3, 1).y, 1)  # x = 1
+        self.assertEqual(Rectangle(10, 2, 0, 0).y, 0)  # x = 0
+        self.assertEqual(Rectangle(10, 2, 10, 1000).y, 1000)  # x = 1000
 
     def test_raise_exception_y_not_set(self):
         """Raise exception if y not set"""
-        pass
+        with self.assertRaises(ValueError):
+            Rectangle(10, 2, 3, -1)
+            Rectangle(10, 2, 5, 15.3)
+
+        with self.assertRaises(TypeError):
+            Rectangle(10, 2, 1, "2")
+            Rectangle(10, 3.5, 5, None)
