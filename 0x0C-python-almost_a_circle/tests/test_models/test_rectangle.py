@@ -150,7 +150,8 @@ class TestRectangleClass(unittest.TestCase):
         displayed_output = output.getvalue()
         self.assertEqual(displayed_output, extected_out)
 
-    def test_update_rectangle_details(self):
+    # test update with args
+    def test_update_rectangle_details_using_args(self):
         """Successfully update the rectangle details"""
         self.rect = Rectangle(10, 10, 10, 10)
         self.rect.update(89)
@@ -158,3 +159,14 @@ class TestRectangleClass(unittest.TestCase):
 
         self.rect.update(89, 2, 3, 4, 5)
         self.assertEqual(str(self.rect), "[Rectangle] (89) 4/5 - 2/3")
+
+    # test update with args and kwargs
+    def test_update_rectangle_details_using_args_and_kwargs(self):
+        """Successfully update the rectangle details\
+        using either args or kwargs"""
+        self.rect = Rectangle(10, 10, 10, 10)
+        self.rect.update(height=1)
+        self.assertEqual(str(self.rect), "[Rectangle] (1) 10/10 - 10/1")
+
+        self.rect.update(x=1, height=2, y=3, width=4)
+        self.assertEqual(str(self.rect), "[Rectangle] (1) 1/3 - 4/2")
