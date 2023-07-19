@@ -149,7 +149,7 @@ class Rectangle(Base):
         for _ in range(self.height):
             print(" " * self.x + "#" * self.width)
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """update the details of an existing rectangle
 
         Update in the format: Rectangle(id, width, height, x, y)
@@ -166,3 +166,8 @@ class Rectangle(Base):
             self.x = args[3]
         if len(args) > 4:
             self.y = args[4]
+
+        if kwargs:
+            # Update attributes based on kwargs
+            for key, value in kwargs.items():
+                setattr(self, key, value)
