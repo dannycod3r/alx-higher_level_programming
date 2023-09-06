@@ -30,8 +30,9 @@ class Rectangle:
 
     def __init__(self, width=0, height=0):
         """Constructor for objects"""
-        self.height = height
         self.width = width
+        self.height = height
+
 
     # getters
     @property

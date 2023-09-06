@@ -35,8 +35,8 @@ class Rectangle:
 
     def __init__(self, width=0, height=0):
         """Constructor for objects"""
-        self.height = height
         self.width = width
+        self.height = height
         Rectangle.number_of_instances += 1
 
     def __del__(self):
