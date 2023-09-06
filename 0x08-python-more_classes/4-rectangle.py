@@ -26,7 +26,7 @@ class Rectangle:
     def __repr__(self):
         """Return a formal representation of Rectangle"""
         # Rectangle(2, 4)
-        return "Rectangle ({:d}, {:d})".format(self.width, self.height)
+        return "Rectangle({:d}, {:d})".format(self.width, self.height)
 
     def __init__(self, width=0, height=0):
         """Constructor for objects"""
