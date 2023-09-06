@@ -33,7 +33,6 @@ class Rectangle:
         self.width = width
         self.height = height
 
-
     # getters
     @property
     def width(self):
