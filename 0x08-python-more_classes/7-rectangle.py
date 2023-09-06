@@ -23,9 +23,9 @@ class Rectangle:
 
         for i in range(self.height):
             if i == self.height - 1:
-                rect += Rectangle.print_symbol * self.width
+                rect += str(self.print_symbol) * self.width
             else:
-                rect += Rectangle.print_symbol * self.width + "\n"
+                rect += str(self.print_symbol) * self.width + "\n"
 
         return rect
 
