@@ -1,0 +1,58 @@
+# 0-add_integer.txt
+
+========================
+Module ``0-add_integer``
+========================
+
+The module ``0-add_integer`` supplies the function ``add_integer``.
+
+Function ``add_integer`` returns the sum of two numbers
+
+``Usage``
+---------
+
+>>> add_integer = __import__('0-add_integer').add_integer
+
+Working with numbers - positives
+
+>>> add_integer(2)
+100
+>>> add_integer(5, 10)
+15
+>>> add_integer(5.0)
+103
+>>> add_integer(5.5, 2.5)
+7
+
+Working with numbers - negatives
+>>> add_integer(-5)
+93
+>>> add_integer(-3, -5)
+-8
+>>> add_integer(-5.3, -9.2)
+-14
+
+None int and None floats raise TypeError
+>>> add_integer('5')
+Traceback (most recent call last):
+TypeError: a must be an integer
+
+>>> add_integer(10, '5')
+Traceback (most recent call last):
+TypeError: b must be an integer
+
+>>> add_integer('hello')
+Traceback (most recent call last):
+TypeError: a must be an integer
+
+>>> add_integer(None)
+Traceback (most recent call last):
+TypeError: a must be an integer
+
+>>> add_integer(4, 'hello')
+Traceback (most recent call last):
+TypeError: b must be an integer
+
+>>> add_integer(2+4j)
+Traceback (most recent call last):
+TypeError: a must be an integer
