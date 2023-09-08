@@ -1,0 +1,68 @@
+# 2-matrix_divided.txt
+
+==================================
+Module: ``2-matrix_divided`
+==================================
+
+Module ``matrix_divided`` supplies the function ``matrix_divided``
+which divided all element of a given matrix
+
+
+Examples:
+
+::
+    >>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+
+    >>> matA = [
+    ... [1, 2, 3],
+    ... [4, 5, 6]
+    ... ]
+
+    >>> print(matrix_divided(matA, 3))
+    [[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
+    >>> print(matA)
+    [[1, 2, 3], [4, 5, 6]]
+
+    >>> matB = [[1, 2], [3, 4]]
+    >>> print(matrix_divided(matB, 2))
+    [[0.5, 1.0], [1.5, 2.0]]
+
+Matrix not list of lists of floats
+
+::
+    >>> not_list = None
+    >>> print(matrix_divided(not_list, 3))
+    Traceback (most recent call last):
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+    >>> not_list_of_lists_of_int_or_float = [['A', 'B', 'C'], ['D', 'E', 'F']]
+    >>> print(matrix_divided(not_list_of_lists_of_int_or_float, 3))
+    Traceback (most recent call last):
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+
+If ``div`` is not int or float
+
+::
+    >>> print(matrix_divided(matB, "2"))
+    Traceback (most recent call last):
+    TypeError: div must be a number
+
+    >>> print(matrix_divided(matB, 2+4j))
+    Traceback (most recent call last):
+    TypeError: div must be a number
+
+Division by zero
+
+::
+    >>> print(matrix_divided(matB, 0))
+    Traceback (most recent call last):
+    ZeroDivisionError: division by zero
+
+Matrix size not equal
+
+::
+    >>> matC = [[1, 2, 3, 4], [5, 6]]
+    >>> print(matrix_divided(matC, 2))
+    Traceback (most recent call last):
+    TypeError: Each row of the matrix must have the same size
