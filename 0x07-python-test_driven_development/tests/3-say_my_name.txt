@@ -1,0 +1,28 @@
+# 3-say_my_name.txt
+
+==================================
+Module: ``3-say_my_name``
+==================================
+
+Module supplies the function ``say_my_name`` which
+Prints My name is <first name> <last name>
+
+
+Examples:
+
+::
+    >>> say_my_name = __import__('3-say_my_name').say_my_name
+
+    >>> say_my_name("Daniel", "Osei")
+    My name is Daniel Osei
+
+    >>> say_my_name("Daniel")
+    My name is Daniel 
+
+    >>> say_my_name(12, "Osei")
+    Traceback (most recent call last):
+    TypeError: first_name must be a string
+
+    >>> say_my_name("Daniel", 12)
+    Traceback (most recent call last):
+    TypeError: last_name must be a string
