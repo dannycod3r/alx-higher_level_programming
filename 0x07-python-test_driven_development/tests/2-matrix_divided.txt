@@ -27,6 +27,23 @@ Examples:
     >>> print(matrix_divided(matB, 2))
     [[0.5, 1.0], [1.5, 2.0]]
 
+Float overflow
+
+::
+    >>> print(matrix_divided(matA, float('inf')))
+    [[0.0, 0.0, 0.0], [0.0, 0.0, 0.0]]
+
+Missing Args
+
+::
+    >>> print(matrix_divided())
+    Traceback (most recent call last):
+    TypeError: matrix_divided() missing 2 required positional arguments: 'matrix' and 'div'
+
+    >>> print(matrix_divided(matA))
+    Traceback (most recent call last):
+    TypeError: matrix_divided() missing 1 required positional argument: 'div'
+
 Matrix not list of lists of floats
 
 ::
