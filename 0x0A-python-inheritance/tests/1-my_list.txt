@@ -1,0 +1,35 @@
+# 1-my_list.py
+
+====================
+Module ``1-my_list``
+====================
+
+Supplies the class ``MyList``.
+Class has public method print_sorted() that prints the list, but
+sorted (ascending sort)
+
+Example
+
+Sorted list
+::
+    >>> MyList = __import__('1-my_list').MyList
+    >>> mlist = MyList()
+    >>> mlist.append(1)
+    >>> mlist.append(2)
+    >>> mlist.append(3)
+    >>> mlist.append(4)
+    >>> mlist.print_sorted()
+    [1, 2, 3, 4]
+
+    >>> my_list = MyList()
+    >>> my_list.append(4)
+    >>> my_list.append(2)
+    >>> my_list.append(1)
+    >>> my_list.append(3)
+    >>> my_list.print_sorted()
+    [1, 2, 3, 4]
+
+    >>> my_list = MyList()
+    >>> my_list.print_sorted()
+    []
+
