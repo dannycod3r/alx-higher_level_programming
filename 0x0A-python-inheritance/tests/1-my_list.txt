@@ -21,6 +21,18 @@ Sorted list
     >>> mlist.print_sorted()
     [1, 2, 3, 4]
 
+Same number
+::
+    >>> MyList = __import__('1-my_list').MyList
+    >>> mlist = MyList()
+    >>> mlist.append(1)
+    >>> mlist.append(1)
+    >>> mlist.append(1)
+    >>> mlist.append(1)
+    >>> mlist.print_sorted()
+    [1, 1, 1, 1]
+
+
 Unsorted list
 ::
     >>> my_list = MyList()
@@ -63,3 +75,21 @@ None
     >>> my_list_none.append(None)
     >>> my_list_none.print_sorted()
     [None]
+
+Floats
+::
+    >>> my_list_fl = MyList()
+    >>> my_list_fl.append(2.5)
+    >>> my_list_fl.append(3.4)
+    >>> my_list_fl.append(1.19)
+    >>> my_list_fl.print_sorted()
+    [1.19, 2.5, 3.4]
+
+Strings
+::
+    >>> my_list_str = MyList()
+    >>> my_list_str.append("Kfoi")
+    >>> my_list_str.append("Ama")
+    >>> my_list_str.append("Yaw")
+    >>> my_list_str.print_sorted()
+    ['Ama', 'Kfoi', 'Yaw']
