@@ -1,0 +1,58 @@
+# 7-base_geometry.txt
+
+==========================
+Module ``7-base_geometry``
+==========================
+
+Module supplies the class ``BaseGeometry``
+
+The method ``integer_validator`` validate value.
+Raises:
+    TypeError if value is not integer
+    ValueError if value is less than or equal to 0
+
+Example
+::
+    >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+    >>> bg = BaseGeometry()
+
+    >>> bg.integer_validator("my_int", 12)
+    >>> bg.integer_validator("width", 89)
+
+String type
+::
+    >>> bg.integer_validator("name", "John")
+    Traceback (most recent call last):
+    TypeError: name must be an integer
+
+Negative number
+::
+    >>> bg.integer_validator("distance", -4)
+    Traceback (most recent call last):
+    ValueError: distance must be greater than 0
+
+Zero
+::
+    >>> bg.integer_validator("age", 0)
+    Traceback (most recent call last):
+    ValueError: age must be greater than 0
+
+No name passed
+::
+    >>> bg.integer_validator(0)
+    Traceback (most recent call last):
+    TypeError: BaseGeometry.integer_validator() missing 1 required positional argument: 'value'
+
+
+No value passed
+::
+    >>> bg.integer_validator("height")
+    Traceback (most recent call last):
+    TypeError: BaseGeometry.integer_validator() missing 1 required positional argument: 'value'
+
+
+No argument passed
+::
+    >>> bg.integer_validator()
+    Traceback (most recent call last):
+    TypeError: BaseGeometry.integer_validator() missing 2 required positional arguments: 'name' and 'value'
