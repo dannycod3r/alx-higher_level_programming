@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """Module 10-square supplies the class Square"""
-Rectangle = __import__('10-rectangle').Rectangle
+Rectangle = __import__('10-square').Rectangle
 
 
 class Square(Rectangle):
