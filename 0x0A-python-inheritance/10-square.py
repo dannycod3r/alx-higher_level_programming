@@ -2,6 +2,7 @@
 """Module 10-square supplies the class Square"""
 Rectangle = __import__('9-rectangle').Rectangle
 
+
 class Square(Rectangle):
     """class Square"""
     def __init__(self, size):
@@ -14,7 +15,6 @@ class Square(Rectangle):
     def __str__(self):
         """Return an informal representation of Rectangle"""
         return "[Rectangle] {:d}/{:d}".format(self.__size, self.__size)
-
 
     def area(self):
         """Override area method"""
