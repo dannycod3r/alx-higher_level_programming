@@ -256,3 +256,40 @@ class Base:
             instance_dict["x"] = int(csv_dict["x"])
             instance_dict["y"] = int(csv_dict["y"])
         return instance_dict
+
+    @staticmethod
+    def draw(list_rectangles, list_squares):
+        """Draw all the rectangles and squares using Turtle graphics."""
+        # Create a Turtle screen
+        screen = turtle.Screen()
+        screen.bgcolor("white")
+
+        # Create a Turtle object
+        t = turtle.Turtle()
+        t.speed(1)  # Set drawing speed (adjust as needed)
+
+        # Function to draw a single rectangle or square
+        def draw_shape(shape, color):
+            t.penup()
+            t.fillcolor(color)
+            t.goto(shape.x, shape.y)
+            t.pendown()
+            t.begin_fill()
+            for _ in range(4):
+                t.forward(shape.width)
+                t.left(90)
+            t.end_fill()
+
+        # Loop through the list of rectangles and draw them
+        for rectangle in list_rectangles:
+            draw_shape(rectangle, "blue")  # You can set your own color
+
+        # Loop through the list of squares and draw them
+        for square in list_squares:
+            draw_shape(square, "red")  # You can set your own color
+
+        # Adjust the window dimensions and coordinates
+        screen.setworldcoordinates(-50, -50, 300, 300)  # Adjust as needed
+
+        # Close the Turtle graphics window on click
+        screen.exitonclick()
