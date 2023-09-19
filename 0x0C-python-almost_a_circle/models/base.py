@@ -2,6 +2,8 @@
 """Module supplies Base Class
 """
 import json
+import csv
+import turtle
 
 
 class Base:
@@ -136,3 +138,121 @@ class Base:
                 return [cls.create(**d) for d in list_dicts]
         except FileNotFoundError:
             return []
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """Write the CSV representation of list_objs to a file.
+
+        Args:
+            list_objs (list): List of instances
+            (e.g., Rectangle or Square instances).
+
+        Note:
+            The filename is based on the class name (e.g., "Rectangle.csv").
+        """
+        if list_objs is None:
+            list_objs = []
+
+        # Get the class name
+        class_name = cls.__name__
+
+        # Build the filename
+        filename = "{}.csv".format(class_name)
+
+        # Define the field names based on the class
+        field_names = cls.get_csv_field_names()
+
+        # Open the file for writing
+        with open(filename, 'w', newline='') as file:
+            writer = csv.DictWriter(file, fieldnames=field_names)
+
+            # Write the header row
+            writer.writeheader()
+
+            # Write the data rows
+            for obj in list_objs:
+                writer.writerow(obj.to_csv_dict())
+
+    @classmethod
+    def get_csv_field_names(cls):
+        """Get the field names for CSV serialization.
+
+        Returns:
+            list: List of field names.
+        """
+        if cls.__name__ == "Rectangle":
+            return ["id", "width", "height", "x", "y"]
+        elif cls.__name__ == "Square":
+            return ["id", "size", "x", "y"]
+
+    def to_csv_dict(self):
+        """Convert instance attributes to a dictionary for CSV serialization.
+
+        Returns:
+            dict: Dictionary representing instance
+            attributes for CSV serialization.
+        """
+        if self.__class__.__name__ == "Rectangle":
+            return {
+                "id": self.id,
+                "width": self.width,
+                "height": self.height,
+                "x": self.x,
+                "y": self.y
+            }
+        elif self.__class__.__name__ == "Square":
+            return {"id": self.id, "size": self.size, "x": self.x, "y": self.y}
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """Load instances from a CSV file.
+
+        Returns:
+            list: List of instances loaded from the file.
+        """
+        # Get the class name
+        class_name = cls.__name__
+
+        # Build the filename
+        filename = "{}.csv".format(class_name)
+
+        try:
+            with open(filename, 'r', newline='') as file:
+                reader = csv.DictReader(file)
+                instances = []
+
+                for row in reader:
+                    # Convert CSV row to a dictionary of attributes
+                    obj_dict = cls.from_csv_dict(row)
+
+                    # Create an instance with the attributes
+                    instance = cls.create(**obj_dict)
+                    instances.append(instance)
+
+                return instances
+        except FileNotFoundError:
+            return []
+
+    @classmethod
+    def from_csv_dict(cls, csv_dict):
+        """Convert a CSV dictionary to an instance dictionary.
+
+        Args:
+            csv_dict (dict): Dictionary representing CSV row data.
+
+        Returns:
+            dict: Dictionary representing instance attributes.
+        """
+        instance_dict = {}
+        if cls.__name__ == "Rectangle":
+            instance_dict["id"] = int(csv_dict["id"])
+            instance_dict["width"] = int(csv_dict["width"])
+            instance_dict["height"] = int(csv_dict["height"])
+            instance_dict["x"] = int(csv_dict["x"])
+            instance_dict["y"] = int(csv_dict["y"])
+        elif cls.__name__ == "Square":
+            instance_dict["id"] = int(csv_dict["id"])
+            instance_dict["size"] = int(csv_dict["size"])
+            instance_dict["x"] = int(csv_dict["x"])
+            instance_dict["y"] = int(csv_dict["y"])
+        return instance_dict
