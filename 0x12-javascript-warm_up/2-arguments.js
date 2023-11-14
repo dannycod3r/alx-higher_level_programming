@@ -7,8 +7,13 @@
 // if no arg -> log “No argument”
 // if only 1 or more -> “Argument found"
 
-if (!process.argv[2]) {
+// Subtract 2 to exclude 'node' and script path
+const argsCount = process.argv.length - 2;
+
+if (argsCount === 0) {
   console.log('No argument');
-} else {
+} else if (argsCount === 1) {
   console.log('Argument found');
+} else {
+  console.log('Arguments found');
 }
