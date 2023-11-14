@@ -10,6 +10,5 @@ if (args.length <= 1) {
   const uniqueArgsSet = new Set(args);
   const uniqueArgs = Array.from(uniqueArgsSet);
   uniqueArgs.sort((a, b) => b - a);
-  console.log(uniqueArgs);
   console.log(uniqueArgs[1]);
 }
