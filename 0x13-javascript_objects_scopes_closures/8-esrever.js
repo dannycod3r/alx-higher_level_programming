@@ -1,3 +1,5 @@
+#!/usr/bin/node
+
 exports.esrever = function (list) {
   // Create an empty array to store the reversed elements
   const reversedList = [];
