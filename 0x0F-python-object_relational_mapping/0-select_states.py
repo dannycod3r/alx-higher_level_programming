@@ -7,7 +7,6 @@ import sys
 import MySQLdb
 
 if __name__ == '__main__':
-    
     # database details from commandline
     args = sys.argv[1:]
     mysql_username = args[0]
@@ -26,7 +25,7 @@ if __name__ == '__main__':
     )
 
     cur = db.cursor()
-    cur.execute("SELECT * FROM states")  # SQL query
+    cur.execute("SELECT * FROM states ORDER BY id ASC")  # SQL query
     states = cur.fetchall()
 
     for state in states:
