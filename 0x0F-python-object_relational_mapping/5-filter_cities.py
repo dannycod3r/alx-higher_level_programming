@@ -33,7 +33,7 @@ if __name__ == '__main__':
                  ORDER BY cities.name ASC", (state_name,))
     cities_fetched = cur.fetchall()
 
-    if cities_fetched:
+    if cities_fetched is not None:
         print(", ".join([row[1] for row in cities_fetched]))
 
     # close connections
