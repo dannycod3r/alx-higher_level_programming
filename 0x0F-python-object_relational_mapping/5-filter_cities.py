@@ -34,7 +34,7 @@ if __name__ == '__main__':
     cities_fetched = cur.fetchall()
 
     if cities_fetched:
-        print(", ".join([row[1] for row in cities_fetched])) 
+        print(", ".join([row[1] for row in cities_fetched]))
 
     # close connections
     cur.close()
