@@ -7,9 +7,10 @@ from sqlalchemy.ext.declarative import declarative_base
 
 Base = declarative_base()
 
+
 class State(Base):
     """Database model for State
-    
+
     Attributes:
     __tablename__: table name
     id: state id
