@@ -24,7 +24,7 @@ if __name__ == "__main__":
     found_status = False  # not found
     for state in states:
         if state.name == searched:
-            print("{}".format(state.id))
+            print("{:d}".format(state.id))
             found_status = True  # found
             break
 
